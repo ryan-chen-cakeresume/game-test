@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 function Finish() {
@@ -5,10 +6,15 @@ function Finish() {
   const { gameId } = router.query;
 
   return (
-    <div>
-      <h1>Finish</h1>
-      <p>Game ID: {gameId}</p>
-    </div>
+    <>
+      <Head>
+        <title>Finish</title>
+      </Head>
+      <div>
+        <h1>Finish</h1>
+        <p>Game ID: {gameId}</p>
+      </div>
+    </>
   );
 }
 

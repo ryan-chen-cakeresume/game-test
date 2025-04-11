@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 const totalQuestions = 5;
@@ -22,24 +23,32 @@ function Question() {
   };
 
   return (
-    <div>
-      <ul>
-        <li>Game ID: {gameId}</li>
-        <li>Question ID: {questionId}</li>
-      </ul>
+    <>
+      <Head>
+        <title>Question {questionId}</title>
+      </Head>
       <div>
-        <button disabled={parsedQuestionId === 1} onClick={handlePrevQuestion}>
-          Prev Question
-        </button>
-        <button
-          disabled={parsedQuestionId === totalQuestions}
-          onClick={handleNextQuestion}
-        >
-          Next Question
-        </button>
-        <button onClick={handleFinish}>Finish</button>
+        <ul>
+          <li>Game ID: {gameId}</li>
+          <li>Question ID: {questionId}</li>
+        </ul>
+        <div>
+          <button
+            disabled={parsedQuestionId === 1}
+            onClick={handlePrevQuestion}
+          >
+            Prev Question
+          </button>
+          <button
+            disabled={parsedQuestionId === totalQuestions}
+            onClick={handleNextQuestion}
+          >
+            Next Question
+          </button>
+          <button onClick={handleFinish}>Finish</button>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
