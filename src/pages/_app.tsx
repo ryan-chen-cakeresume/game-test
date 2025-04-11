@@ -15,6 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const pathname = router.pathname;
 
   useEffect(() => {
+    console.log('> pageview', pathname);
     window.gtag?.('set', { page_location: pathname });
     window.gtag?.('event', 'page_view');
   }, [pathname]);
