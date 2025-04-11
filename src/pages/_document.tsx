@@ -16,7 +16,7 @@ export default function Document() {
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
 
-              gtag('config', 'G-RBFx3K2F49W');
+              gtag('config', 'G-RBF3K2F49W');
             `
           }}
         />
