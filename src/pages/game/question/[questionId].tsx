@@ -34,7 +34,7 @@ function Question() {
   };
 
   const handleAnswerQuestion = () => {
-    trackEvent('question_answer', {
+    trackEvent('x_answer', {
       userId: userId,
       journeyId: journeyId,
       questionId: questionId
@@ -44,7 +44,7 @@ function Question() {
   };
 
   useEffect(() => {
-    trackEvent('question_view', {
+    trackEvent('x_view', {
       userId: userId,
       journeyId: journeyId,
       questionId: questionId
