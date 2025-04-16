@@ -5,7 +5,8 @@ import { useState } from 'react';
 function Start() {
   const router = useRouter();
 
-  const [gameId, setGameId] = useState('');
+  const [userId, setUserId] = useState('');
+  const [journeyId, setJourneyId] = useState('');
 
   return (
     <>
@@ -14,17 +15,29 @@ function Start() {
       </Head>
       <div>
         <div>
-          Game ID:
+          User ID:
           <input
             type="text"
-            value={gameId}
-            onChange={({ target }) => setGameId(target.value)}
+            value={userId}
+            onChange={({ target }) => setUserId(target.value)}
+          />
+        </div>
+        <div>
+          Journey ID:
+          <input
+            type="text"
+            value={journeyId}
+            onChange={({ target }) => setJourneyId(target.value)}
           />
         </div>
         <div>
           <button
-            disabled={!gameId}
-            onClick={() => router.push(`/game/${gameId}/1`)}
+            disabled={!userId || !journeyId}
+            onClick={() =>
+              router.push(
+                `/game/question/1?userId=${userId}&journeyId=${journeyId}`
+              )
+            }
           >
             Start Game
           </button>
